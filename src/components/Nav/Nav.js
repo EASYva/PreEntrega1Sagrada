@@ -15,7 +15,7 @@ function NavBar() {
     <>
       <NavContainer>
         <div className="home-icon" href="/">
-        <h2><HomeIcon/>E- commerce</h2>
+        <h2><HomeIcon/> E- commerce</h2>
         </div>
         <div className={`links ${clicked ? 'active' : ''}`}>
           <a href="/">Celulares</a>
@@ -105,13 +105,11 @@ const NavContainer = styled.nav`
     
   }
   .home-icon{
+    padding-right: 1rem;
     h2{
       color: black;
       font-weight: 400;
-      
-      span{
-        font-weight: bold;
-      }
+    
       display: flex;
   }
 `
