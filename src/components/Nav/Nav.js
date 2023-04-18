@@ -1,35 +1,36 @@
-
 import CartWidget from "../CartWidget/CartWidget";
 import styled from "styled-components";
 import BurgerButton from "./BurgerButton";
 import { useState } from "react";
 import HomeIcon from "../HomeIcon/HomeIcon";
-
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
-  const [clicked, setClicked] = useState(false)
-  const handleClick = () =>{ 
-    setClicked(!clicked)
-  }
+  const [clicked, setClicked] = useState(false);
+  const handleClick = () => {
+    setClicked(!clicked);
+  };
   return (
     <>
       <NavContainer>
-        <div className="home-icon" href="/">
-        <h2><HomeIcon/> E- commerce</h2>
+        <div className="home-icon" to="/">
+          <NavLink to="/">
+            <HomeIcon />
+            E-commerce
+          </NavLink>
         </div>
-        <div className={`links ${clicked ? 'active' : ''}`}>
-          <a href="/">Celulares</a>
-          <a href="/">Tablets</a>
-          <a href="/">Notebooks</a>
+        <div className={`links ${clicked ? "active" : ""}`}>
+          <NavLink to="/categoria">categoria1</NavLink>
+          <NavLink to="/categoria">categroria2</NavLink>
+          <NavLink to="/categoria">categoria3</NavLink>
         </div>
         <div className="menu-user">
-        <CartWidget />
-        <div className="burger">
-          <BurgerButton clicked={clicked} handleClick={handleClick}/>
+        <NavLink to="/cart"><CartWidget /></NavLink>
+          <div className="burger">
+            <BurgerButton clicked={clicked} handleClick={handleClick} />
+          </div>
         </div>
-        </div>
-        <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
-        
+        <BgDiv className={`initial ${clicked ? " active" : ""}`}></BgDiv>
       </NavContainer>
     </>
   );
@@ -112,25 +113,28 @@ const NavContainer = styled.nav`
     
       display: flex;
   }
-`
+`;
 const BgDiv = styled.div`
-
-background: rgb(232,194,18);
-background: linear-gradient(333deg, rgba(232,194,18,1) 0%, rgba(140,66,158,1) 50%, rgba(59,116,138,1) 89%);
+  background: rgb(232, 194, 18);
+  background: linear-gradient(
+    333deg,
+    rgba(232, 194, 18, 1) 0%,
+    rgba(140, 66, 158, 1) 50%,
+    rgba(59, 116, 138, 1) 89%
+  );
   position: absolute;
   top: -1000px;
   left: -1000px;
   width: 100%;
   height: 100%;
   z-index: -1;
-  transition: all .6s ease ;
-  
-  &.active{
+  transition: all 0.6s ease;
+
+  &.active {
     border-radius: 0% 0% 80% 0%;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
- 
-`
+`;

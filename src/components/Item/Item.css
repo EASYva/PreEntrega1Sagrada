@@ -1,0 +1,29 @@
+.article {
+  display: flex;
+  min-width: 400px;
+  width: 30%;
+  min-height: 400px;
+  padding: 20px;
+  margin-bottom: 20px;
+  flex-direction: column;
+  background-color: aliceblue;
+  border-radius: 8px;
+}
+.article > img{
+    height: 300px;
+    object-fit: contain;
+
+}
+.description{
+    height: fit-content;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+}
+.title{
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}

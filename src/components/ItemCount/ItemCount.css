@@ -1,0 +1,9 @@
+.counter {
+    width: fit-content;
+    display: flex;
+    margin: auto;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 20% 20% 20% 20%;
+    background: linear-gradient(333deg, rgba(232,194,18,1) 0%, rgba(140,66,158,1) 50%, rgba(59,116,138,1) 89%);
+}
