@@ -1,30 +1,22 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
 import React, {useEffect, useState} from "react";
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { useParams } from "react-router-dom";
 
-const product = [
-    {
-        id:1,
-        name: "Iphone 12",
-        price: 10000,
-        category: "celular",
-        img: "https://tienda.antel.com.uy/razuna/assets/1/DD4F296114664C8BB4F646C566B13C83/img/2E87F6DD138B4C619A4A826DD483C885/iPhone12-1_2E87F6DD138B4C619A4A826DD483C885.jpg",
-        stock: 20,
-        description: "Description de Iphone 12"
-    },
-    
-  ];
-
-const ItemDetailContainer = () => {
+export const ItemDetailContainer = () => {
     const [data, setData] = useState({});
+    const  { detalleId } = useParams();
 
-useEffect(() => {
-    const getData = new Promise(resolve => {
-        setTimeout(() => {
-            resolve(product);
-    }, 3000);
-    });
-getData.then(res => setData(res));
-},[]);
+    useEffect(() => {
+        const querydb = getFirestore();
+        const queryDoc = doc(querydb, 'product', detalleId);
+        getDoc(queryDoc)
+        .then(res => setData({ id: res.id, ...res.data()}))
+        .catch((error) => {
+            console.error("Error fetching document:", error);
+          });
+    }, [detalleId])
+
     return(
         <ItemDetail data = {data}/>
     );
@@ -32,3 +24,4 @@ getData.then(res => setData(res));
 
 
 export default ItemDetailContainer;
+// getData.then (res => setData(res.find(product => product.id === parseInt(detalleId))));

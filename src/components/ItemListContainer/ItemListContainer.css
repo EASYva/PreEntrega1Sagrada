@@ -1,7 +1,9 @@
 .item-container{
- display:flex ;
- width:100vw;   
- justify-content: center;
- gap: 20px;
+ display:flex;
+ width: auto;   
+ justify-content:center;
+ gap: 10px;
  margin-top: 80px;
+
+
 }

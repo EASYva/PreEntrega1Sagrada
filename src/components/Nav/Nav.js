@@ -4,6 +4,7 @@ import BurgerButton from "./BurgerButton";
 import { useState } from "react";
 import HomeIcon from "../HomeIcon/HomeIcon";
 import { NavLink } from "react-router-dom";
+import CartImage from "../CartWidget/CartImage";
 
 function NavBar() {
   const [clicked, setClicked] = useState(false);
@@ -20,12 +21,12 @@ function NavBar() {
           </NavLink>
         </div>
         <div className={`links ${clicked ? "active" : ""}`}>
-          <NavLink to="/categoria">categoria1</NavLink>
-          <NavLink to="/categoria">categroria2</NavLink>
-          <NavLink to="/categoria">categoria3</NavLink>
+          <NavLink to="/categoria/Celulares">Celulares</NavLink>
+          <NavLink to="/categoria/Notebooks">Notebooks</NavLink>
+          <NavLink to="/categoria/Tablets">Tablets</NavLink>
         </div>
         <div className="menu-user">
-        <NavLink to="/cart"><CartWidget /></NavLink>
+        <NavLink to="/cart"><CartImage /></NavLink>
           <div className="burger">
             <BurgerButton clicked={clicked} handleClick={handleClick} />
           </div>

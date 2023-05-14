@@ -1,0 +1,22 @@
+.Total{
+    width: 100px;
+    margin: auto;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+.Button{
+    width: 200px;
+    margin-left: 600px;
+    display: inline;
+    justify-content: space-between;
+    
+
+}
+.text{
+    width: 400px;
+    padding-top: 30px;
+    margin: auto;
+    flex-wrap: wrap;
+    align-items: center;
+}

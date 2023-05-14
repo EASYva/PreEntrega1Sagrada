@@ -1,0 +1,21 @@
+.container{
+    width: 100px;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.Label{
+    width: 500px;
+    margin: auto;
+   display:inline;
+   justify-content: space-between;
+   
+}
+.Button{
+    width: 100px;
+    margin: auto;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
